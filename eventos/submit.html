@@ -4,15 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Event: contextmenu</title>
+    <title>Event: submit</title>
   </head>
-  <body oncontextmenu="debug(event)">
-    <input type="text" />
+  <body>
+    <form onsubmit="debug(event)">
+      <input type="text" />
+      <button type="submit">enviar</button>
+    </form>
 
     <script>
       function debug(e) {
+        e.preventDefault();
         console.log("Evento: " + e.type);
-        "Event: " + e.type;
       }
     </script>
   </body>
